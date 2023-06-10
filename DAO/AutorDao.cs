@@ -7,10 +7,10 @@ namespace Biblioteca.DAO
 {
     public class AutorDao : Conexao
     {
-        public List<Autor> Listar(string termoPesquisa)
+        public List<Autor> Listar(string termoDaPesquisa)
         {
             return conexao.Query<Autor>("SELECT * FROM Autores where Nome like @termoPesquisa order by Nome",
-                new {@termoPesquisa = "%"+termoPesquisa+"%"}).ToList();
+                new {@termoPesquisa = "%"+ termoDaPesquisa + "%"}).ToList();
         }
 
         public void Adicionar(Autor autor)
