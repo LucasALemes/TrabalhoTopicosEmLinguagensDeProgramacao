@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{53221D36-4C55-4998-B4FA-278C03E933C1}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Biblioteca</RootNamespace>
+    <AssemblyName>Biblioteca</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.0.123\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Global.cs" />
+    <Compile Include="DAO\AutorDao.cs" />
+    <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\EditoraDao.cs" />
+    <Compile Include="DAO\GeneroDao.cs" />
+    <Compile Include="DAO\LivroDao.cs" />
+    <Compile Include="DAO\UsuarioDao.cs" />
+    <Compile Include="Model\Autor.cs" />
+    <Compile Include="Model\Editora.cs" />
+    <Compile Include="Model\Genero.cs" />
+    <Compile Include="Model\Livro.cs" />
+    <Compile Include="Model\Usuario.cs" />
+    <Compile Include="View\AutoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AutoresForm.Designer.cs">
+      <DependentUpon>AutoresForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\EditorasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\EditorasForm.Designer.cs">
+      <DependentUpon>EditorasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\GenerosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GenerosForm.Designer.cs">
+      <DependentUpon>GenerosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LivrosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LivrosForm.Designer.cs">
+      <DependentUpon>LivrosForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PrincipalForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PrincipalForm.Designer.cs">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\UsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\UsuarioForm.Designer.cs">
+      <DependentUpon>UsuarioForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\AutoresForm.resx">
+      <DependentUpon>AutoresForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\EditorasForm.resx">
+      <DependentUpon>EditorasForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\GenerosForm.resx">
+      <DependentUpon>GenerosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LivrosForm.resx">
+      <DependentUpon>LivrosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\PrincipalForm.resx">
+      <DependentUpon>PrincipalForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="View\UsuarioForm.resx">
+      <DependentUpon>UsuarioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisar24x24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisa16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carregar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669166_import_contacts_ic_icon %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669166_import_contacts_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669166_import_contacts_ic_icon %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669370_contacts_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669397_business_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669469_line_ic_weight_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669363_dashboard_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669211_account_ic_supervisor_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669480_account_circle_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669160_ic_input_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669365_create_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669479_add_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669378_clear_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669360_delete_forever_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3669355_done_ic_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\653281_book_education_knowledge_learning_read_icon.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
